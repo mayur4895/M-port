@@ -2,7 +2,7 @@
 import {create} from "zustand";
 
 interface UserStore {
-  data: any[] | null; // Adjust the type for your data
+  data: any;
   setUserData: (data: any[] | null) => void;
 }
 
