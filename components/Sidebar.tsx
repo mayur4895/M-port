@@ -34,6 +34,7 @@ import {
   
   import { PiCrownLight, PiDiamondsFourThin, PiStackThin, PiSuitcaseThin, PiUsersThin } from "react-icons/pi";
 import { CiHome } from 'react-icons/ci';
+import Link from 'next/link'
 
 const Sidebar = () => {
   return (
@@ -42,37 +43,37 @@ const Sidebar = () => {
       <div className='w-ful shadow-md border border-b-0 h-20 px-5  items-center flex'>LOGOX</div>
      
     <Command className="rounded-lg border shadow-md ">
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput placeholder="search here..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup>
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <CiHome  className="mr-2 h-4 w-4" />
-            <span  className="text-black">Home</span>
+            <span  className="text-black"><Link href="/">Home</Link></span>
           </CommandItem>
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <PiCrownLight  className="mr-2 h-4 w-4" />
-            <span  className="text-black">Services</span>
+            <span  className="text-black"><Link href="/services">Services</Link></span>
           </CommandItem>
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <PiStackThin className="mr-2 h-4 w-4" />
-            <span  className="text-black">Projects</span>
+            <span  className="text-black"><Link href="/projects">Projects</Link></span>
           </CommandItem>
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <PiDiamondsFourThin   className="mr-2 h-4 w-4" />
-            <label  className="text-black">Skills</label>
+            <label  className="text-black"><Link href="/skills">Skills</Link></label>
              
           </CommandItem>
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <PiUsersThin className="mr-2 h-4 w-4" />
-            <span  className="text-black">Testimonials</span>
+            <span  className="text-black"><Link href="/testimonials">Testimonials</Link></span>
         
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Settings">
           
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <GearIcon className="mr-2 h-4 w-4" /> 
             <span  className="text-black">Settings</span>
           </CommandItem>
@@ -102,9 +103,9 @@ const Sidebar = () => {
             <CiHome  className="mr-2 h-4 w-4" />
             <span  className="text-black">Home</span>
           </CommandItem>
-          <CommandItem>
+          <CommandItem  className=' cursor-pointer'>
             <PiCrownLight  className="mr-2 h-4 w-4" />
-            <span  className="text-black">Services</span>
+            <span  className="text-black cursor-pointer"><Link href={"/services"}>Services</Link></span>
           </CommandItem>
           <CommandItem>
             <PiStackThin className="mr-2 h-4 w-4" />
@@ -115,7 +116,7 @@ const Sidebar = () => {
             <label  className="text-black">Skills</label>
              
           </CommandItem>
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <PiUsersThin className="mr-2 h-4 w-4" />
             <span  className="text-black">Testimonials</span>
         
@@ -124,7 +125,7 @@ const Sidebar = () => {
         <CommandSeparator />
         <CommandGroup heading="Settings">
           
-          <CommandItem>
+          <CommandItem className="cursor-pointer">
             <GearIcon className="mr-2 h-4 w-4" /> 
             <span  className="text-black">Settings</span>
           </CommandItem>

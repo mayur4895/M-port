@@ -7,6 +7,7 @@ import { useUserStore } from '@/hooks/Apistore';
  
 import React, { useEffect, useState } from 'react'
 import Services from '../../components/Services';
+import Projects from '@/components/Projects';
 
 const MainComponent =  () => {
 
@@ -27,13 +28,14 @@ useEffect(() => {
     fetchDataFromApi();
 },[]);
  
-console.log(data);
+// console.log(data);
 
        
   return (
     <div>
        <Banner/>
        <Services/>
+       <Projects/>
     </div>
   )
 }

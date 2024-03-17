@@ -59,9 +59,16 @@ const Banner = () => {
        </div>
        
        <div className="flex flex-col gap-5">
+          <div className="flex flex-wrap gap-5">
           <div>
             <h2 className=" font-medium mb-3">Location</h2>
             <span className="text-sm text-gray-600">{about?.address}</span>
+          </div>
+          
+          <div>
+            <h2 className=" font-medium mb-3">Email</h2>
+{data && <span className="text-sm text-gray-600">{data[1]?.email}</span>}
+          </div>
           </div>
           <Separator/>
           <div>
