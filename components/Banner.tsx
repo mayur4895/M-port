@@ -31,7 +31,7 @@ const Banner = () => {
          <div className=" px-5  -mt-10 z-10">
          <div className="flex flex-wrap mb-5  w-full  justify-between items-center">
          <div className="flex gap-5 items-center">
-         <Avatar className="h-[150px] w-[150px]  border-4 shadow-lg border-white">
+         <Avatar className="h-[180px] w-[180px]  border-4 shadow-lg -z-10 border-white">
           <AvatarImage src={about?.avatar?.url} alt="@shadcn" className=" object-cover" />
           <AvatarFallback>?</AvatarFallback>
         </Avatar>
@@ -54,26 +54,26 @@ const Banner = () => {
          <div className="mt-8  grid  grid-cols-1 md:grid-cols-2 gap-10">
        <div>
        <h2 className=" font-medium mb-3">About Me</h2>
-          <span className="text-sm text-gray-700 mb-10">{about?.subTitle}</span> <br />
-          <span className="text-sm text-gray-500">{about?.description}</span>
+          <span className="text-sm text-gray-700 dark:text-white mb-10">{about?.subTitle}</span> <br /><br />
+          <span className="text-sm text-gray-500 dark:text-zinc-400">{about?.description}</span>
        </div>
        
        <div className="flex flex-col gap-5">
           <div className="flex flex-wrap gap-5">
           <div>
             <h2 className=" font-medium mb-3">Location</h2>
-            <span className="text-sm text-gray-600">{about?.address}</span>
+            <span className="text-sm text-gray-600 dark:text-zinc-400">{about?.address}</span>
           </div>
           
           <div>
             <h2 className=" font-medium mb-3">Email</h2>
-{data && <span className="text-sm text-gray-600">{data[1]?.email}</span>}
+{data && <span className="text-sm text-gray-600 dark:text-zinc-400">{data[1]?.email}</span>}
           </div>
           </div>
           <Separator/>
           <div>
             <h2 className=" font-medium mb-3">Phone</h2>
-            <span className="text-sm text-gray-600">{about?.phoneNumber}</span>
+            <span className="text-sm text-gray-600 dark:text-zinc-400">{about?.phoneNumber}</span>
           </div>
          </div>
          </div> 

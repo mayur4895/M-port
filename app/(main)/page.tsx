@@ -1,43 +1,42 @@
 'use client'
 import Banner from '@/components/Banner';
-import { Button } from '@/components/ui/button'
-import { useUserStore } from '@/hooks/Apistore';
- 
- 
- 
-import React, { useEffect, useState } from 'react'
-import Services from '../../components/Services';
+import Services from '@/components/Services';
 import Projects from '@/components/Projects';
+import { useUserStore } from '@/hooks/Apistore';
+import axios from 'axios';
+import { useEffect } from 'react';
+import Skills from '@/components/Skills';
 
-const MainComponent =  () => {
+const MainComponent = () => {
+  const { data, setUserData } = useUserStore();
 
-const {data,setUserData} = useUserStore();
-
-
-useEffect(() => {
-    const fetchDataFromApi = async (): Promise<void> => {
+  useEffect(() => {
+    const fetchDataFromApi = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae');
-        const apiData = await response.json();
-        const user = Object.keys(apiData).map((key) => apiData[key]);
-        setUserData(user);  
+        const response = await axios.get(
+          'https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae'
+        );
+
+        const user = Object.keys(response.data).map((key) => response.data[key]);
+        setUserData(user);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-    fetchDataFromApi();
-},[]);
- 
-// console.log(data);
 
-       
+    fetchDataFromApi();
+  }, []);
+
+   console.log(data);
+
   return (
     <div>
-       <Banner/>
-       <Services/>
-       <Projects/>
+      <Banner />
+      <Services />
+      <Projects />
+      <Skills/>
     </div>
-  )
-}
+  );
+};
 
-export default MainComponent
+export default MainComponent;

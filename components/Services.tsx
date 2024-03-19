@@ -53,10 +53,10 @@ const Services = () => {
   return (
     <div className='mt-10 px-5'>
         <h2 className=' font-semibold mb-5'>Services</h2>
-        <div className='flex flex-wrap gap-10'>
+        <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Services.map((service:any,index:any)=>{
               return(
-                <Card key={index} className=' w-72 items-center '>
+                <Card key={index} className=' md:w-72 w-60 items-center '>
                   <div className=' w-full relative'>
                   <Image src={service?.image?.url}  alt="service"  fill className='  items-center absolute  object-cover '/>
                   </div>

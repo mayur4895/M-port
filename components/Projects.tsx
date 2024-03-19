@@ -22,24 +22,21 @@ const Projects = () => {
       setProjects(data[1].projects);
     }
   }, [data]);
-  console.log(Projects);
+  
   return (
     
     <div className='mt-10 px-5'>
         <h2 className=' font-semibold mb-5'>Projects</h2>
-        <div className='flex flex-wrap gap-10'>
+        <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Projects.map((project:any,index:any)=>{
               return(
-                <Card key={index} className=' w-72  h-58  '>
-                  <div className='h-40 w-72 relative'>
+                <Card key={project._id} className=' md:w-72 w-60   h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
+                  <div className='h-44 w-60 md:w-72 relative'>
                   <Image src={project?.image?.url}  alt="project"  fill  className='  items-center absolute  object-cover '/>
                   </div>
-                <CardHeader>
-                  
+                 
                 
-                </CardHeader>
-                
-                <CardFooter className='flex flex-col gap-2'>
+                <CardFooter className='flex flex-col gap-2 p-3 mb-3'>
                 <span className='font-semibold'>Technologies Used</span>
               <div className='flex flex-row'>
                 
