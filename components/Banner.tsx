@@ -26,12 +26,12 @@ const Banner = () => {
   return (
     <div>
       <div className="w-ful h-[200px] relative">
-        <Image src={"/banner.jpg"} fill alt="bg" className=" -z-10 object-cover" />
+        <Image src={"/banner.jpg"} fill alt="bg" className="  object-cover" />
 </div>
-         <div className=" px-5  -mt-10 z-10">
+         <div className=" px-5  -mt-10 ">
          <div className="flex flex-wrap mb-5  w-full  justify-between items-center">
          <div className="flex gap-5 items-center">
-         <Avatar className="h-[180px] w-[180px]  border-4 shadow-lg -z-10 border-white">
+         <Avatar className="h-[180px] w-[180px]  border-4 shadow-lg  border-white">
           <AvatarImage src={about?.avatar?.url} alt="@shadcn" className=" object-cover" />
           <AvatarFallback>?</AvatarFallback>
         </Avatar>

@@ -30,9 +30,9 @@ const Projects = () => {
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Projects.map((project:any,index:any)=>{
               return(
-                <Card key={project._id} className=' md:w-72 w-60   h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
-                  <div className='h-44 w-60 md:w-72 relative'>
-                  <Image src={project?.image?.url}  alt="project"  fill  className='  items-center absolute  object-cover '/>
+                <Card key={project._id} className=' md:w-72 w-60  dark:bg-zinc-900  h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
+                  <div className='h-44 w-60 md:w-72 relative '>
+                  <Image src={project?.image?.url}  alt="project"  fill  className='   items-center absolute  object-fill md:object-cover '/>
                   </div>
                  
                 

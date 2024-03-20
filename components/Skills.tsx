@@ -9,10 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { useUserStore } from '@/hooks/Apistore';
-import Image from 'next/image';
-import { Button } from './ui/button';
- 
-import { Progress } from "@/components/ui/progress"
+import Image from 'next/image';  
+import { Progress } from '@nextui-org/react';
  
  
 const Skills = () => {
@@ -39,19 +37,32 @@ const Skills = () => {
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Skills.map((skill:any)=>{
               return(
-                <Card key={skill._id} className=' md:w-72 w-60 items-center '>
+                <Card key={skill._id} className=' rounded-none md:w-72 w-48 items-center dark:bg-zinc-900'>
               
                 
              
-                <CardHeader className='flex items-center gap-2 flex-row'>
-                <Image src={skill?.image?.url}   alt="skill"  height={50} width={50}   className='  items-center    object-cover '/>
-                  <CardTitle className='flex items-center gap-2 whitespace-nowrap'> {skill?.name}</CardTitle>
+                <CardHeader className='flex items-center gap-2 flex-row p-4'>
+                <Image src={skill?.image?.url}   alt="skill"  height={30} width={30}   className=' drop-shadow-xl  items-center    object-cover '/>
+                 </CardHeader>
+                 <Progress
+                color='success'
+      size="sm"
+      className='px-5 pb-5'
+      radius="sm"
+      classNames={{
+
+        base: "max-w-md",
+        track: "drop-shadow-md border border-default",
+        indicator: "bg-gradient-to-r from-pink-500 to-yellow-500",
+        label: "tracking-wider font-medium text-default-600",
+        value: "text-foreground/60",
+      }}
+      label={   skill?.name}
+      value={skill?.percentage}
+      showValueLabel={true}
+    />
+
                 
-                </CardHeader>
-                
-                <CardFooter className='flex items-center gap-2'>
-                 
-                </CardFooter>
               </Card>
               )
              })} 

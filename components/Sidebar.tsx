@@ -88,7 +88,7 @@ const Sidebar = () => {
 
 
     </div>
-    <div className='md:hidden  fixed h-12 w-full  bg-white border-b dark:bg-black top-0 left-0 z-100'>
+    <div className='md:hidden  fixed h-12 w-full  bg-white border-b dark:bg-black top-0 left-0  z-40'>
       
     <Sheet>
   <SheetTrigger className='md:hidden fixed  top-2 left-2  z-100'><TbMenu size={25}/></SheetTrigger>
