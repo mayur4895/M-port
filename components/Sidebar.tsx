@@ -41,6 +41,7 @@ import { ModeToggle } from './ModeToggle'
 import { MdTimeline } from 'react-icons/md'
 import { useSearchParams } from 'next/navigation'
 import { cursorTo } from 'readline'
+import Image from 'next/image'
 
 const Sidebar = () => {
    const menuItems =[
@@ -78,13 +79,18 @@ const Sidebar = () => {
     
    
   
-  const [isopen,setisopen] = useState(false);
-  console.log(location.pathname);
+
+  
   
   return (
     <>
     <div className='hidden md:w-[250px] md:block h-full fixed inset-0 '>
-      <div className='w-ful shadow-md border border-b-0 h-20 px-5  items-center flex'>LOGOX</div>
+      <div className='w-ful shadow-md border border-b-0 h-20 px-5  items-center flex'>
+        <div className='flex gap-2 items-center'>
+        <Image src={"https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357726628-c4dr18.png"}  alt="logo" height={40} width={40} className=' object-fill'/>
+        Portfolio.
+        </div>
+      </div>
      
     <Command className="rounded-lg border shadow-md h-full ">
       <CommandInput placeholder="search here..." />
@@ -93,7 +99,7 @@ const Sidebar = () => {
         <CommandGroup>
        {menuItems.map((item)=>{
         return(  
-           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100 dark:bg-blue-900":""} cursor-pointer`} onClick={()=>{setisopen(false)}}>
+           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100 dark:bg-blue-900":""} cursor-pointer`} >
            {item.icon}
         <span  className="text-black dark:text-zinc-200"><Link href={item.path}>{item.name}</Link></span>
       </CommandItem> 
@@ -114,11 +120,14 @@ const Sidebar = () => {
     </div>
     <div className='md:hidden  fixed h-12 w-full  bg-white border-b dark:bg-black top-0 left-0  z-40'>
       
-    <Sheet  open={isopen} onOpenChange={setisopen}>
+    <Sheet >
   <SheetTrigger className='md:hidden fixed  top-2 left-2  z-100'><TbMenu size={25}/></SheetTrigger>
   <SheetContent side={"left"}>
     <SheetHeader>
-      <SheetTitle>Brandx</SheetTitle>
+      <SheetTitle className='flex items-center gap-2'>
+        <Image src={"https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357726628-c4dr18.png"}  alt="logo" height={40} width={40} className=' object-fill'/>
+        Portfolio.
+      </SheetTitle>
       <SheetDescription>
          
       </SheetDescription>
@@ -130,7 +139,7 @@ const Sidebar = () => {
         <CommandGroup>
         {menuItems.map((item)=>{
         return(  
-           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100":""} cursor-pointer`} onClick={()=>{setisopen(false)}}>
+           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100":""} cursor-pointer`} >
            {item.icon}
         <span  className="text-black dark:text-zinc-200"><Link href={item.path}>{item.name}</Link></span>
       </CommandItem> 
