@@ -10,13 +10,16 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { Separator } from "./ui/separator";
+import Link from "next/link";
 
 const Banner = () => {
+  const [Socials, setSocials] = useState<any>([]);
   const [about, setAbout] = useState<any>([]);
   const { data } = useUserStore();
 
   useEffect(() => {
     if (data) {
+      setSocials(data[1].social_handles)
       setAbout(data[1].about);
     }
   }, [data]);
@@ -59,7 +62,7 @@ const Banner = () => {
        </div>
        
        <div className="flex flex-col gap-5">
-          <div className="flex flex-wrap gap-5">
+       <div className="flex flex-wrap  justify-between">
           <div>
             <h2 className=" font-medium mb-3">Location</h2>
             <span className="text-sm text-gray-600 dark:text-zinc-400">{about?.address}</span>
@@ -71,9 +74,20 @@ const Banner = () => {
           </div>
           </div>
           <Separator/>
+          <div className="flex flex-wrap  justify-between items-start">
           <div>
             <h2 className=" font-medium mb-3">Phone</h2>
             <span className="text-sm text-gray-600 dark:text-zinc-400">{about?.phoneNumber}</span>
+          </div>
+          <div className=" flex-col flex items-start justify-start">
+          <h2 className=" font-medium mb-3">Follow me</h2>
+            <div className="flex  gap-4 items-center">
+              {Socials.map((i:any)=>{
+                return(
+                  <Link href={i?.url} key={i?._id}>{<Image src={i?.image?.url} height={20} width={20} alt={i?.platform} />}</Link>
+                )
+              })}
+            </div>
           </div>
          </div>
          </div> 
@@ -81,7 +95,7 @@ const Banner = () => {
          </div>
        
       </div>
-      
+      </div>
   
   );
 };

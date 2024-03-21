@@ -11,6 +11,7 @@ import {
     CardTitle,
   } from "@/components/ui/card"
 import Image from 'next/image';
+import { Spinner } from '@nextui-org/react';
 const Projects = () => {
 
     
@@ -23,14 +24,20 @@ const Projects = () => {
     }
   }, [data]);
   
+
+  if( !data){
+    return <div className='h-[100vh] w-full  flex items-center justify-center'>
+        <Spinner label="Loadding.." color="default" labelColor="foreground"/>
+    </div>
+   }
   return (
     
     <div className='mt-10 px-5'>
         <h2 className=' font-semibold mb-5'>Projects</h2>
         <div className='flex flex-wrap gap-10 justify-center items-center'>
-             {Projects.map((project:any,index:any)=>{
+             {Projects.map((project:any)=>{
               return(
-                <Card key={project._id} className=' md:w-72 w-60  dark:bg-zinc-900  h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
+                <Card key={project?._id} className=' md:w-72 w-60  dark:bg-[#070707]  h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
                   <div className='h-44 w-60 md:w-72 relative '>
                   <Image src={project?.image?.url}  alt="project"  fill  className='   items-center absolute  object-fill md:object-cover '/>
                   </div>

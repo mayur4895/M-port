@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import {
     BackpackIcon,
     CalendarIcon,
@@ -25,6 +25,7 @@ import {
   } from "@/components/ui/command"
   import {
     Sheet,
+    SheetClose,
     SheetContent,
     SheetDescription,
     SheetHeader,
@@ -37,8 +38,49 @@ import {
 import { CiHome } from 'react-icons/ci';
 import Link from 'next/link'
 import { ModeToggle } from './ModeToggle'
+import { MdTimeline } from 'react-icons/md'
+import { useSearchParams } from 'next/navigation'
+import { cursorTo } from 'readline'
 
 const Sidebar = () => {
+   const menuItems =[
+    {
+        name: 'Home',
+        path: '/',
+        icon: <CiHome className="mr-2 w-4 h-4" />
+    },{
+      name: 'Services',
+      path: '/services',
+      icon:<PiCrownLight  className="mr-2 h-4 w-4" />
+    },
+    {
+      name: 'Projects',
+      path: '/projects',
+      icon: <PiStackThin className="mr-2 h-4 w-4" />
+    }
+    ,
+    {
+      name: 'Skills',
+      path: '/skills',
+      icon: <PiDiamondsFourThin   className="mr-2 h-4 w-4" />
+    },
+    {
+      name: 'TimeLine',
+      path: '/timeline',
+      icon: <MdTimeline    className="text-gray-500 mr-2 h-4 w-4" />
+    },{
+      name: 'Testimonials',
+      path: '/testimonials',
+      icon: <PiUsersThin className="mr-2 h-4 w-4" />
+    }
+
+   ]
+    
+   
+  
+  const [isopen,setisopen] = useState(false);
+  console.log(location.pathname);
+  
   return (
     <>
     <div className='hidden md:w-[250px] md:block h-full fixed inset-0 '>
@@ -49,36 +91,18 @@ const Sidebar = () => {
       <CommandList className=' h-auto'>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup>
-          <CommandItem className="cursor-pointer">
-            <CiHome  className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200"><Link href="/">Home</Link></span>
-          </CommandItem>
-          <CommandItem className="cursor-pointer">
-            <PiCrownLight  className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200"><Link href="/services">Services</Link></span>
-          </CommandItem>
-          <CommandItem className="cursor-pointer">
-            <PiStackThin className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200"><Link href="/projects">Projects</Link></span>
-          </CommandItem>
-          <CommandItem className="cursor-pointer">
-            <PiDiamondsFourThin   className="mr-2 h-4 w-4" />
-            <label  className="text-black dark:text-zinc-200"><Link href="/skills">Skills</Link></label>
-             
-          </CommandItem>
-          <CommandItem className="cursor-pointer">
-            <PiUsersThin className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200"><Link href="/testimonials">Testimonials</Link></span>
-        
-          </CommandItem>
+       {menuItems.map((item)=>{
+        return(  
+           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100 dark:bg-blue-900":""} cursor-pointer`} onClick={()=>{setisopen(false)}}>
+           {item.icon}
+        <span  className="text-black dark:text-zinc-200"><Link href={item.path}>{item.name}</Link></span>
+      </CommandItem> 
+      )
+       })}
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading="Settings" >
-          
-          <CommandItem className="cursor-pointer">
-            <GearIcon className="mr-2 h-4 w-4" /> 
-            <span  className="text-black dark:text-zinc-200">Settings</span>
-          </CommandItem>
+           
           <CommandItem className="cursor-pointer">
           <ModeToggle/>
           </CommandItem>
@@ -90,7 +114,7 @@ const Sidebar = () => {
     </div>
     <div className='md:hidden  fixed h-12 w-full  bg-white border-b dark:bg-black top-0 left-0  z-40'>
       
-    <Sheet>
+    <Sheet  open={isopen} onOpenChange={setisopen}>
   <SheetTrigger className='md:hidden fixed  top-2 left-2  z-100'><TbMenu size={25}/></SheetTrigger>
   <SheetContent side={"left"}>
     <SheetHeader>
@@ -99,51 +123,29 @@ const Sidebar = () => {
          
       </SheetDescription>
     </SheetHeader>
-
-    <Command className="rounded-lg border shadow-md ">
-      <CommandInput placeholder="Type a command or search..." />
-      <CommandList>
+    <Command className="rounded-lg border shadow-md h-full ">
+      <CommandInput placeholder="search here..." />
+      <CommandList className=' h-auto'>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup>
-          <CommandItem>
-            <CiHome  className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200">Home</span>
-          </CommandItem>
-          <CommandItem  className=' cursor-pointer'>
-            <PiCrownLight  className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200 cursor-pointer"><Link href={"/services"}>Services</Link></span>
-          </CommandItem>
-          <CommandItem>
-            <PiStackThin className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200">Projects</span>
-          </CommandItem>
-          <CommandItem>
-            <PiDiamondsFourThin   className="mr-2 h-4 w-4" />
-            <label  className="text-black dark:text-zinc-200">Skills</label>
-             
-          </CommandItem>
-          <CommandItem className="cursor-pointer">
-            <PiUsersThin className="mr-2 h-4 w-4" />
-            <span  className="text-black dark:text-zinc-200">Testimonials</span>
-        
-          </CommandItem>
+        {menuItems.map((item)=>{
+        return(  
+           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100":""} cursor-pointer`} onClick={()=>{setisopen(false)}}>
+           {item.icon}
+        <span  className="text-black dark:text-zinc-200"><Link href={item.path}>{item.name}</Link></span>
+      </CommandItem> 
+      )
+       })}
         </CommandGroup>
         <CommandSeparator />
-        <CommandGroup heading="Settings">
-          
-          <CommandItem className="cursor-pointer">
-            <GearIcon className="mr-2 h-4 w-4" />  
-            <span  className="text-black dark:text-zinc-200"> Settings   </span>
-          </CommandItem>
+        <CommandGroup heading="Settings" >
+           
           <CommandItem className="cursor-pointer">
           <ModeToggle/>
           </CommandItem>
-
-         
         </CommandGroup>
       </CommandList>
     </Command>
-
   </SheetContent>
 </Sheet>
     </div>

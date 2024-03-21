@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import Skills from '@/components/Skills';
 import { Spinner } from '@nextui-org/react';
 import Testimonials from '@/components/Testimonials';
+import { TimeLine } from '@/components/TimeLine';
+ 
 
 const MainComponent = () => {
   const { data, setUserData } = useUserStore();
@@ -45,7 +47,9 @@ const MainComponent = () => {
       <Services />
       <Projects />
       <Skills/>
+      <TimeLine/>
       <Testimonials/>
+      
     </div>
   );
 };

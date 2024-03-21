@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card"
 import { useUserStore } from '@/hooks/Apistore';
 import Image from 'next/image';  
-import { Progress } from '@nextui-org/react';
+import { Progress, Spinner } from '@nextui-org/react';
  
  
 const Skills = () => {
@@ -29,7 +29,11 @@ const Skills = () => {
   }, [data]);
   
   
-  
+  if( !data){
+    return <div className='h-[100vh] w-full  flex items-center justify-center'>
+        <Spinner label="Loadding.." color="default" labelColor="foreground"/>
+    </div>
+   }
 
   return (
     <div className='mt-10 px-5'>
@@ -37,7 +41,7 @@ const Skills = () => {
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Skills.map((skill:any)=>{
               return(
-                <Card key={skill._id} className=' rounded-none md:w-72 w-48 items-center dark:bg-zinc-900'>
+                <Card key={skill._id} className=' rounded-none md:w-72 w-48 items-center dark:bg-[#070707]'>
               
                 
              

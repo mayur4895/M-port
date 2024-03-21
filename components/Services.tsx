@@ -28,6 +28,7 @@ import { RiAppsFill } from "react-icons/ri";
 import { MdWeb } from "react-icons/md";
 import { BiDiamond } from "react-icons/bi";
 import { PiArrowUpRightThin } from "react-icons/pi";
+import { Spinner } from '@nextui-org/react';
 const ServiceICon:any = {
   "App Development": <BsFillGrid1X2Fill size={22}  className='text-orange-500'/>,
   "Web & App ":<MdWeb size={22} className='text-green-500'/>,
@@ -48,7 +49,11 @@ const Services = () => {
     }
   }, [data]);
   
-  
+  if( !data){
+    return <div className='h-[100vh] w-full  flex items-center justify-center'>
+        <Spinner label="Loadding.." color="default" labelColor="foreground"/>
+    </div>
+   }
 
   return (
     <div className='mt-10 px-5'>
@@ -56,7 +61,7 @@ const Services = () => {
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Services.map((service:any,index:any)=>{
               return(
-                <Card key={index} className=' md:w-72 w-60 items-center '>
+                <Card key={index} className=' md:w-72 w-60 items-center dark:bg-[#070707]'>
                   <div className=' w-full relative'>
                   <Image src={service?.image?.url}  alt="service"  fill className='  items-center absolute  object-cover '/>
                   </div>
