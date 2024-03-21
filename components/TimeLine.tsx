@@ -36,7 +36,7 @@ export function TimeLine() {
            
            
            (
-            <li className="mb-10 ms-6" key={index}>
+            <li className="mb-10 ms-6" key={cur}>
             <span className="absolute flex items-center justify-center w-2 h-2 bg-cyan-500 rounded-full  -start-1 ring-8 ring-cyan-100 dark:ring-gray-900 dark:bg-blue-900">
               {/* Icon (e.g., SVG or other) */}
             </span>

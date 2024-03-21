@@ -41,7 +41,7 @@ const Skills = () => {
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Skills.map((skill:any,index:any)=>{
               return(
-                <Card key={index} className=' rounded-none md:w-72 w-48 items-center dark:bg-[#070707]'>
+                <Card key={skill?.name} className=' rounded-none md:w-72 w-48 items-center dark:bg-[#070707]'>
               
                 
              

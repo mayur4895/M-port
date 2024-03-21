@@ -61,7 +61,7 @@ const Services = () => {
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Services.map((service:any,index:any)=>{
               return(
-                <Card key={index} className=' md:w-72 w-60 items-center dark:bg-[#070707]'>
+                <Card key={service?.name} className=' md:w-72 w-60 items-center dark:bg-[#070707]'>
                   <div className=' w-full relative'>
                   <Image src={service?.image?.url}  alt="service"  fill className='  items-center absolute  object-cover '/>
                   </div>

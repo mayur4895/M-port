@@ -47,7 +47,7 @@ const Testimonials = () => {
         <Carousel className="  max-w-md lg:max-w-4xl" >
       <CarouselContent className="-ml-1  w-full" >
         {Testimonials.map(( testimonial:any, index:any) => (
-          <CarouselItem key={index} className="pl-1 lg:basis-1/3   grid w-full" >
+          <CarouselItem key={testimonial?.name} className="pl-1 lg:basis-1/3   grid w-full" >
             <div className="p-1">
             <Card className=' rounded-none  py-1   h-80  md:h-96  items-center dark:bg-[#070707]'>
                 
