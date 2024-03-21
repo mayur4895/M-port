@@ -86,7 +86,7 @@ const Sidebar = () => {
         <CommandGroup>
        {menuItems.map((item)=>{
         return(  
-           <CommandItem key={item.path} className={`${window.location.pathname ===  item.path ? "bg-green-100 dark:bg-blue-900":""} cursor-pointer`} >
+           <CommandItem key={item.path} className="cursor-pointer" >
            {item.icon}
         <span  className="text-black dark:text-zinc-200"><Link href={item.path}>{item.name}</Link></span>
       </CommandItem> 
@@ -126,7 +126,7 @@ const Sidebar = () => {
         <CommandGroup>
         {menuItems.map((item)=>{
         return(  
-           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100":""} cursor-pointer`} >
+          <CommandItem key={item.path} className="cursor-pointer" >
            {item.icon}
         <span  className="text-black dark:text-zinc-200"><Link href={item.path}>{item.name}</Link></span>
       </CommandItem> 
