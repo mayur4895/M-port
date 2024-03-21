@@ -40,10 +40,10 @@ export function TimeLine() {
             <span className="absolute flex items-center justify-center w-2 h-2 bg-cyan-500 rounded-full  -start-1 ring-8 ring-cyan-100 dark:ring-gray-900 dark:bg-blue-900">
               {/* Icon (e.g., SVG or other) */}
             </span>
-            <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+            <h3 className="flex items-center mb-1 text-sm whitespace-nowrap md:text-base font-semibold text-gray-900 dark:text-white">
               {cur?.jobTitle}
               
-              <span className="bg-yellow-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">
+              <span className="bg-yellow-100 text-blue-800   whitespace-nowrap text-xs md:text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ms-3">
                 {cur?.company_name}
               </span>
             </h3>

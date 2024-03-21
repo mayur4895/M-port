@@ -36,12 +36,12 @@ const Skills = () => {
    }
 
   return (
-    <div className='mt-10 px-5'>
+    <div className='mt-10 px-2'>
         <h2 className=' font-semibold mb-5'>Skills</h2>
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Skills.map((skill:any,index:any)=>{
               return(
-                <Card key={skill?.name} className=' rounded-none md:w-72 w-48 items-center dark:bg-[#070707]'>
+                <Card key={skill?.name} className=' rounded-none  md:w-72  w-44 items-center dark:bg-[#070707]'>
               
                 
              

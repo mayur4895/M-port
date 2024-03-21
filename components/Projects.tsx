@@ -38,7 +38,7 @@ const Projects = () => {
              {Projects.map((project:any,index:any)=>{
               return(
                 <Card key={project?.title} className=' md:w-72 w-60  dark:bg-[#070707]  h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
-                  <div className='h-44 w-60 md:w-72 relative '>
+                  <div className=' h-44 md:h-48 w-60 md:w-72 relative '>
                   <Image src={project?.image?.url}  alt="project"  fill  className='   items-center absolute  object-fill md:object-cover '/>
                   </div>
                  
@@ -48,7 +48,7 @@ const Projects = () => {
               <div className='flex flex-row'>
                 
               {project?.techStack.map((skill:any)=>{
-                     return(<p className='text-xs'>{skill},</p>)
+                     return(<p className='text-xs'>{skill+ ' , '} </p>)
                     })}
               </div>
                 </CardFooter>

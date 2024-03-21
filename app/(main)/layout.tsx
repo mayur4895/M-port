@@ -12,7 +12,7 @@ const MainLayout = ({children}: {children: React.ReactNode}) => {
      <div className='flex flex-row gap-5'>
      <Sidebar/>
      
-     <div className=' w-full md:ml-[250px]   md:mt-0 mt-[50px]'>
+     <div className=' md:max-w-[calc(100%-250px)] w-full  md:ml-[250px]  ml-0  md:mt-0 mt-[50px]'>
        
        {children}
        

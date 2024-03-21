@@ -11,19 +11,16 @@ import {
 import { useUserStore } from '@/hooks/Apistore';
 import Image from 'next/image';  
 import { Progress, Spinner } from '@nextui-org/react';
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+ 
+import Caresoul from './Caresoul';
+import MySwiper from './Caresoul';
+import Carousel from './Caresoul';
+import SlickCarousel from './Caresoul';
  
 const Testimonials = () => {
 
    
-  const [Testimonials, setTestimonials] = useState<any>([]);
+ const [Testimonials, setTestimonials] = useState<any>([]); 
   const { data } = useUserStore();
 
   useEffect(() => {
@@ -41,15 +38,16 @@ const Testimonials = () => {
   
 
   return (
-    <div className='mt-10 px-5'>
+    <div className='mt-10 px-5 w-full '>
         <h2 className=' font-semibold mb-5'>Testimonials</h2>
-        <div className='flex items-center justify-center w-full'>  
-        <Carousel className="  max-w-md lg:max-w-4xl" >
-      <CarouselContent className="-ml-1  w-full" >
+        <SlickCarousel data={Testimonials}/>
+{/*      
+        <Carousel className=" h-auto max-w-md  sm:calc(w-[100% - 260px]) overflow-hidden" >
+      <CarouselContent className="-ml-1  h-auto w-full" >
         {Testimonials.map(( testimonial:any, index:any) => (
-          <CarouselItem key={testimonial?.name} className="pl-1 lg:basis-1/3   grid w-full" >
+          <CarouselItem key={testimonial?.name} className="pl-1  basis-1/1 md:basis-1/2   h-auto" >
             <div className="p-1">
-            <Card className=' rounded-none  py-1   h-80  md:h-96  items-center dark:bg-[#070707]'>
+            <Card className=' rounded-none  py-1  h-96  w-auto items-center dark:bg-[#070707]'>
                 
               <CardHeader className='flex items-center gap-2 flex-row  m-0'>
                 <Image src={testimonial?.image?.url}   alt="testimonial"  height={30} width={30}   className=' drop-shadow-xl  items-center    object-cover '/>
@@ -66,10 +64,9 @@ const Testimonials = () => {
           </CarouselItem>
         ))}
       </CarouselContent> 
-      <CarouselPrevious/>
-     <CarouselNext/>
+      
     </Carousel>
-    </div>    
+        */}
         </div>
   
   )
