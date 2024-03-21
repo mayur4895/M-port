@@ -35,9 +35,9 @@ const Projects = () => {
     <div className='mt-10 px-5'>
         <h2 className=' font-semibold mb-5'>Projects</h2>
         <div className='flex flex-wrap gap-10 justify-center items-center'>
-             {Projects.map((project:any)=>{
+             {Projects.map((project:any,index:any)=>{
               return(
-                <Card key={project?._id} className=' md:w-72 w-60  dark:bg-[#070707]  h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
+                <Card key={index} className=' md:w-72 w-60  dark:bg-[#070707]  h-auto  overflow-hidden  cursor-pointer hover:shadow-lg transition-all '>
                   <div className='h-44 w-60 md:w-72 relative '>
                   <Image src={project?.image?.url}  alt="project"  fill  className='   items-center absolute  object-fill md:object-cover '/>
                   </div>

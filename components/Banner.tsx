@@ -84,7 +84,7 @@ const Banner = () => {
             <div className="flex  gap-4 items-center">
               {Socials.map((i:any)=>{
                 return(
-                  <Link href={i?.url} key={i?._id}>{<Image src={i?.image?.url} height={20} width={20} alt={i?.platform} />}</Link>
+                  <Link href={i?.url} key={i?.platform}>{<Image src={i?.image?.url} height={20} width={20} alt={i?.platform} />}</Link>
                 )
               })}
             </div>

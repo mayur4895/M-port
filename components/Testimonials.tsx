@@ -49,7 +49,7 @@ const Testimonials = () => {
         {Testimonials.map(( testimonial:any, index:any) => (
           <CarouselItem key={index} className="pl-1 lg:basis-1/3   grid w-full" >
             <div className="p-1">
-            <Card key={testimonial._id} className=' rounded-none  py-1   h-80  md:h-96  items-center dark:bg-[#070707]'>
+            <Card className=' rounded-none  py-1   h-80  md:h-96  items-center dark:bg-[#070707]'>
                 
               <CardHeader className='flex items-center gap-2 flex-row  m-0'>
                 <Image src={testimonial?.image?.url}   alt="testimonial"  height={30} width={30}   className=' drop-shadow-xl  items-center    object-cover '/>

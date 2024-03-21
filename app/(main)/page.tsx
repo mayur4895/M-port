@@ -33,7 +33,7 @@ const MainComponent = () => {
     };
 
     fetchDataFromApi();
-  }, []);
+  }, [setUserData]);
 
    console.log(data);
  if(isLoding || !data){
