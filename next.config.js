@@ -1,8 +1,10 @@
 // next.config.js
 module.exports = {
-    eslint: {
-      ignoreDuringBuilds: true,
-    },
+    reactStrictMode: true,
+     
+    
+    images: {
+      domains: ['portfolio-image-store.s3.ap-south-1.amazonaws.com']  },
     // ...other config settings
   };
   
