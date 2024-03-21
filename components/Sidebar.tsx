@@ -1,17 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import {
-    BackpackIcon,
-    CalendarIcon,
-    Component1Icon,
-    EnvelopeClosedIcon,
-    FaceIcon,
-    GearIcon,
-    HomeIcon,
-    LayersIcon,
-    PersonIcon,
-    RocketIcon,
-  } from "@radix-ui/react-icons"
+ 
 import {
     Command,
     CommandDialog,
@@ -39,9 +28,7 @@ import { CiHome } from 'react-icons/ci';
 import Link from 'next/link'
 import { ModeToggle } from './ModeToggle'
 import { MdTimeline } from 'react-icons/md'
-import { useSearchParams } from 'next/navigation'
-import { cursorTo } from 'readline'
-import Image from 'next/image'
+ import Image from 'next/image'
 
 const Sidebar = () => {
    const menuItems =[
@@ -99,7 +86,7 @@ const Sidebar = () => {
         <CommandGroup>
        {menuItems.map((item)=>{
         return(  
-           <CommandItem key={item.path} className={`${location.pathname ===  item.path ? "bg-green-100 dark:bg-blue-900":""} cursor-pointer`} >
+           <CommandItem key={item.path} className={`${window.location.pathname ===  item.path ? "bg-green-100 dark:bg-blue-900":""} cursor-pointer`} >
            {item.icon}
         <span  className="text-black dark:text-zinc-200"><Link href={item.path}>{item.name}</Link></span>
       </CommandItem> 
