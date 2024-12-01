@@ -5,18 +5,12 @@ import { useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
  
 
-export function TimeLine() {
-
-    const [TimeLine, setTimeLine] = useState<any>([]);
+export function Education() {
   const { data } = useUserStore();
+    const [TimeLine, setTimeLine] = useState<any>(data?.timeline);
+   
 
-  useEffect(() => {
-    if (data) {
-        
-        const Data = data[1].timeline;
-      setTimeLine(Data)
-    }
-  }, [data]);
+  
   
   if( !data){
     return <div className='h-[100vh] w-full  flex items-center justify-center'>

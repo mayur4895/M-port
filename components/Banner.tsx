@@ -13,19 +13,11 @@ import { Separator } from "./ui/separator";
 import Link from "next/link";
 
 const Banner = () => {
-  const [Socials, setSocials] = useState<any>([]);
-  const [about, setAbout] = useState<any>([]);
   const { data } = useUserStore();
-
-  useEffect(() => {
-    if (data) {
-      setSocials(data[1].social_handles)
-      setAbout(data[1].about);
-    }
-  }, [data]);
-
+  const [Socials, setSocials] = useState<any>(data.social_handles);
+  const [about, setAbout] = useState<any>(data.about);
   
-
+ 
   return (
     <div>
       <div className="w-ful h-[200px] relative">
@@ -61,26 +53,26 @@ const Banner = () => {
           <span className="text-sm text-gray-500 dark:text-zinc-400">{about?.description}</span>
        </div>
        
-       <div className="flex flex-col gap-5">
-       <div className="flex flex-wrap  justify-between">
-          <div>
+       <div className="flex flex-col  gap-5 ">
+       <div className="flex flex-wrap gap-8  justify-between">
+          <div >
             <h2 className=" font-medium mb-3">Location</h2>
             <span className="text-sm text-gray-600 dark:text-zinc-400">{about?.address}</span>
           </div>
           
           <div>
             <h2 className=" font-medium mb-3">Email</h2>
-{data && <span className="text-sm text-gray-600 dark:text-zinc-400">{data[1]?.email}</span>}
+{data && <span className="text-sm text-gray-600 dark:text-zinc-400">{data?.email}</span>}
           </div>
           </div>
           <Separator/>
-          <div className="flex flex-wrap  justify-between items-start">
+          <div className="flex flex-wrap gap-8  justify-between items-start">
           <div>
-            <h2 className=" font-medium mb-3">Phone</h2>
+            <h2 className=" font-medium mb-2">Phone</h2>
             <span className="text-sm text-gray-600 dark:text-zinc-400">{about?.phoneNumber}</span>
           </div>
-          <div className=" flex-col flex items-start justify-start">
-          <h2 className=" font-medium mb-3">Follow me</h2>
+          <div className=" mr-8 flex-col flex items-start justify-start">
+          <h2 className=" font-medium mb-2">Follow me</h2>
             <div className="flex  gap-4 items-center">
               {Socials.map((i:any)=>{
                 return(

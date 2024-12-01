@@ -22,13 +22,14 @@ import {
     SheetTrigger,
   } from "@/components/ui/sheet"
   import { TbMenu } from "react-icons/tb";
-
-  import { PiCrownLight, PiDiamondsFourThin, PiStackThin, PiSuitcaseThin, PiUsersThin } from "react-icons/pi";
+  import { SlGraduation } from "react-icons/sl";
+  import {   PiDiamondsFourThin, PiStackThin, PiSuitcaseThin, PiUsersThin } from "react-icons/pi";
 import { CiHome } from 'react-icons/ci';
 import Link from 'next/link'
 import { ModeToggle } from './ModeToggle'
-import { MdTimeline } from 'react-icons/md'
+import { MdPhone, MdTimeline } from 'react-icons/md'
  import Image from 'next/image'
+import { FaRegPaperPlane } from 'react-icons/fa';
 
 const Sidebar = () => {
    const menuItems =[
@@ -36,11 +37,7 @@ const Sidebar = () => {
         name: 'Home',
         path: '/',
         icon: <CiHome className="mr-2 w-4 h-4" />
-    },{
-      name: 'Services',
-      path: '/services',
-      icon:<PiCrownLight  className="mr-2 h-4 w-4" />
-    },
+    } ,
     {
       name: 'Projects',
       path: '/projects',
@@ -53,13 +50,14 @@ const Sidebar = () => {
       icon: <PiDiamondsFourThin   className="mr-2 h-4 w-4" />
     },
     {
-      name: 'TimeLine',
-      path: '/timeline',
-      icon: <MdTimeline    className="text-gray-500 mr-2 h-4 w-4" />
-    },{
-      name: 'Testimonials',
-      path: '/testimonials',
-      icon: <PiUsersThin className="mr-2 h-4 w-4" />
+      name: 'Education',
+      path: '/education',
+      icon: <SlGraduation     className="text-gray-500 mr-2 h-4 w-4" />
+    },
+    {
+      name:'Contact Me',
+      path: '/contact',
+      icon: <FaRegPaperPlane     className="text-gray-500 mr-2 h-3 w-3" />
     }
 
    ]

@@ -12,18 +12,46 @@ import {
   } from "@/components/ui/card"
 import Image from 'next/image';
 import { Spinner } from '@nextui-org/react';
+import { MayurData } from '@/lib/data';
 const Projects = () => {
 
     
-  const [Projects, setProjects] = useState<any>([]);
-  const { data } = useUserStore();
-
+ 
+  const { data,setUserData } = useUserStore();
+  const [Projects, setProjects] = useState<any[]>([]); 
+ 
+  const [isLoading, setIsLoading] = useState(false);
+ 
   useEffect(() => {
-    if (data) {
-      setProjects(data[1].projects);
-    }
-  }, [data]);
-  
+   
+    const fetchLocalData = () => {
+      setIsLoading(true);  
+      try {
+        const user = MayurData.user;  
+        setUserData(user);  
+        setProjects(user.projects)
+      
+      } catch (error) {
+        setIsLoading(false)
+        console.error("Error setting local data:", error);
+      } finally {
+        setIsLoading(false);  
+      }
+    }; 
+    fetchLocalData();
+  }, [setUserData]);
+
+
+ 
+
+ 
+  if (!data || !Projects) {
+    return (
+      <div className='h-[100vh] w-full flex items-center justify-center'>
+       <Spinner label="Loading..." color="default" labelColor="foreground" />
+      </div>
+    );
+  }
 
   if( !data){
     return <div className='h-[100vh] w-full  flex items-center justify-center'>
@@ -32,8 +60,8 @@ const Projects = () => {
    }
   return (
     
-    <div className='mt-10 px-5'>
-        <h2 className=' font-semibold mb-5'>Projects</h2>
+    <div className='mt-10 px-5 text-center'>
+        <h2 className=' text-3xl  mb-5'>Projects</h2>
         <div className='flex flex-wrap gap-10 justify-center items-center'>
              {Projects.map((project:any,index:any)=>{
               return(

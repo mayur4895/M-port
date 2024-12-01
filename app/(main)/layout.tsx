@@ -9,16 +9,14 @@ const MainLayout = ({children}: {children: React.ReactNode}) => {
 
   return (
     <>
-     <div className='flex flex-row gap-5'>
+     <div className='   flex flex-row gap-5 w-full'>
      <Sidebar/>
      
-     <div className=' md:max-w-[calc(100%-250px)] w-full  md:ml-[250px]  ml-0  md:mt-0 mt-[50px]'>
+     <div className=' flex  justify-center   flex-col      md:max-w-[calc(100%-250px)] w-full  md:ml-[250px]  ml-0  md:mt-0 mt-[50px]'>
        
        {children}
        
-     <div className=' text-center  items-center flex justify-center h-20 border w-full mt-10'>
-       <span className='flex gap-2 items-center'>   <PiCopyrightThin size={25}/> All rights reserved <Image alt="logo" className='bg-black  rounded-lg' height={20} width={20} src={"/m.png"}/> Developer</span>
-     </div>
+      
      </div>
      </div>
       

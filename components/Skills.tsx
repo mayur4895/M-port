@@ -1,79 +1,106 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import { useUserStore } from '@/hooks/Apistore';
-import Image from 'next/image';  
-import { Progress, Spinner } from '@nextui-org/react';
- 
- 
+import {
+  FaDocker, FaReact, FaNodeJs, FaGithub, FaGit,
+  FaDatabase, FaJs, FaGitAlt,
+} from 'react-icons/fa';
+import {
+  SiMongodb, SiVercel, SiTypescript, SiTailwindcss,
+} from "react-icons/si";
+import {
+  TbBrandRedux, TbBrandNextjs, TbBrandGraphql,
+  TbMoodEmpty,
+} from "react-icons/tb";
+import { RiJavascriptFill } from "react-icons/ri";
+import { DiRedis } from "react-icons/di";
+import { Spinner } from '@nextui-org/react';
+import { MayurData } from '@/lib/data';
+
+const iconMap: any = {
+  FaDocker: FaDocker,
+  FaReact: FaReact,
+  FaNodeJs: FaNodeJs,
+  FaGithub: FaGithub,
+  FaGit: FaGit,
+  FaDatabase: FaDatabase,
+  FaJs: FaJs,
+  SiMongodb: SiMongodb,
+  TbBrandRedux: TbBrandRedux,
+  RiJavascriptFill: RiJavascriptFill,
+  FaGitAlt: FaGitAlt,
+  SiVercel: SiVercel,
+  SiTypescript: SiTypescript,
+  TbBrandNextjs: TbBrandNextjs,
+  TbBrandGraphql: TbBrandGraphql,
+  SiTailwindcss: SiTailwindcss,
+  DiRedis: DiRedis,
+};
+
 const Skills = () => {
+ 
+ 
 
-   
-  const [Skills, setSkills] = useState<any>([]);
-  const { data } = useUserStore();
-
+  const { data, setUserData } = useUserStore();
+  const [isLoading, setIsLoading] = useState(false);
+  const [skills, setSkills] = useState<any[]>([]);
   useEffect(() => {
-    if (data) {
-        const SkillsReverse = data[1].skills.slice(0).reverse();
-         
-        
-      setSkills(SkillsReverse)
-    }
-  }, [data]);
-  
-  
-  if( !data){
-    return <div className='h-[100vh] w-full  flex items-center justify-center'>
-        <Spinner label="Loadding.." color="default" labelColor="foreground"/>
-    </div>
-   }
+   
+    const fetchLocalData = () => {
+      setIsLoading(true);  
+      try {
+        const user = MayurData.user;  
+        setUserData(user);  
+        setSkills(user.skills)
+      
+      } catch (error) {
+        setIsLoading(false)
+        console.error("Error setting local data:", error);
+      } finally {
+        setIsLoading(false);  
+      }
+    }; 
+    fetchLocalData();
+  }, [setUserData]);
+
+
+ 
+
+ 
+  if (!data || !skills) {
+    return (
+      <div className='h-[100vh] w-full flex items-center justify-center'>
+       <Spinner label="Loading..." color="default" labelColor="foreground" />
+      </div>
+    );
+  }
 
   return (
-    <div className='mt-10 px-2'>
-        <h2 className=' font-semibold mb-5'>Skills</h2>
-        <div className='flex flex-wrap gap-10 justify-center items-center'>
-             {Skills.map((skill:any,index:any)=>{
-              return(
-                <Card key={skill?.name} className=' rounded-none  md:w-72  w-44 items-center dark:bg-[#070707]'>
-              
-                
-             
-                <CardHeader className='flex items-center gap-2 flex-row p-4'>
-                <Image src={skill?.image?.url}   alt="skill"  height={30} width={30}   className=' drop-shadow-xl  items-center    object-cover '/>
-                 </CardHeader>
-                 <Progress
-                color='success'
-      size="sm"
-      className='px-5 pb-5'
-      radius="sm"
-      classNames={{
-
-        base: "max-w-md",
-        track: "drop-shadow-md border border-default",
-        indicator: "bg-gradient-to-r from-pink-500 to-yellow-500",
-        label: "tracking-wider font-medium text-default-600",
-        value: "text-foreground/60",
-      }}
-      label={   skill?.name}
-      value={skill?.percentage}
-      showValueLabel={true}
-    />
-
-                
-              </Card>
-              )
-             })} 
-
-        </div>
+    <div className='mt-10 px-4 h-[100vh] flex items-center flex-col justify-center'>
+      <h2 className='text-3xl mb-5'>Skills</h2>
+      <div className='flex flex-wrap gap-6 justify-center items-center'>
+        {skills.map((skill: any) => (
+          <Card
+            key={skill._id}
+            className='rounded-lg shadow-md w-28 h-36 p-2 dark:bg-[#222]/20 flex flex-col items-center'
+          >
+            <CardHeader className='flex items-center gap-2 mb-4'>
+              {skill.icon && iconMap[skill.icon] ? (
+                <span className="text-4xl text-zinc-800 dark:text-gray-400">
+                  {React.createElement(iconMap[skill.icon])}
+                </span>
+              ) : null}
+              <span className='text-gray-500'>{skill.name}</span>
+            </CardHeader>
+          </Card>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

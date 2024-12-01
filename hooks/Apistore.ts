@@ -3,7 +3,7 @@ import {create} from "zustand";
 
 interface UserStore {
   data: any;
-  setUserData: (data: any[] | null) => void;
+  setUserData: (data:any) => void;
 }
 
 export const useUserStore = create<UserStore>((set) => ({
