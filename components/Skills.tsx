@@ -20,6 +20,7 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { DiRedis } from "react-icons/di";
 import { Spinner } from '@nextui-org/react';
 import { MayurData } from '@/lib/data';
+import { RippleStyle } from './MagicUi/Ripple';
 
 const iconMap: any = {
   FaDocker: FaDocker,
@@ -80,9 +81,12 @@ const Skills = () => {
   }
 
   return (
-    <div className='mt-10 px-4 h-[100vh] flex items-center flex-col justify-center'>
+  
+    <div className='   mt-10 px-4 h-[100vh] flex items-center flex-col justify-center'>
+      
       <h2 className='text-3xl mb-5'>Skills</h2>
-      <div className='flex flex-wrap gap-6 justify-center items-center'>
+    
+      <div className='flex flex-wrap gap-6 justify-center items-center z-50'>
         {skills.map((skill: any) => (
           <Card
             key={skill._id}
@@ -99,7 +103,9 @@ const Skills = () => {
           </Card>
         ))}
       </div>
+  
     </div>
+ 
   );
 };
 

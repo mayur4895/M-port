@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { NextProvider } from "@/components/provider/next-ui-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const font = Poppins({ weight:['300','400','500','600','700','800','900'],subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           >
             <NextProvider>
                       {children}
+                 
         </NextProvider>
         </ThemeProvider>
         </body>

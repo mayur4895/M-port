@@ -9,6 +9,8 @@ import Skills from "@/components/Skills";
 import { Spinner } from "@nextui-org/react";
  import { Education } from "@/components/Education";
 import { MayurData } from "@/lib/data";
+import ContactForm from "@/components/ContactForm";
+import { Footer } from "@/components/Footer";
 
 const MainComponent = () => {
   const { data, setUserData } = useUserStore();
@@ -46,6 +48,8 @@ const MainComponent = () => {
       <Skills />
       <Projects /> 
       <Education />
+      <ContactForm/>
+      <Footer/>
  
     </div>
   );

@@ -4,24 +4,32 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { useState, useEffect } from "react";
 import { useUserStore } from "@/hooks/Apistore";
 import { Button } from "./ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+import { GoDownload } from "react-icons/go";
 import { Separator } from "./ui/separator";
 import Link from "next/link";
+import { SparklesPreview } from "./AcertinityUi/SparklesPreview";
+ 
 
 const Banner = () => {
   const { data } = useUserStore();
   const [Socials, setSocials] = useState<any>(data.social_handles);
   const [about, setAbout] = useState<any>(data.about);
-  
+  const handleDownload = () => {
  
+    const link = document.createElement("a");
+    link.href = data.about.resumeUrl;
+    link.target = "blank"
+    link.download = "Mayur_Shinde_Resume.pdf"; // Set the desired filename
+    link.click();
+  };
+ 
+
+ 
+  
   return (
     <div>
       <div className="w-ful h-[200px] relative">
-        <Image src={"/banner.jpg"} fill alt="bg" className="  object-cover" />
+      <SparklesPreview/>
 </div>
          <div className=" px-5  -mt-10 ">
          <div className="flex flex-wrap mb-5  w-full  justify-between items-center">
@@ -32,15 +40,13 @@ const Banner = () => {
         </Avatar>
        <div className="flex flex-col mt-10">
         
-       <h3 className="text-3xl  font-medium">{about?.name}</h3>
+       <h3 className="text-3xl  font-medium parkinsans-400 ">{about?.name}</h3>
         <span className=" text-gray-500">{about?.title}</span>
        </div>
          </div>
       
-       <div className="mt-10 flex gap-5 items-center">
-      
-
-        
+       <div className="mt-10 mx-5 flex gap-5 items-center"> 
+       <Button variant={"outline"} onClick={handleDownload}  className="     font-semibold text-sm flex items-center gap-1">Download Cv <GoDownload /></Button>
        </div>
  
 
@@ -87,6 +93,7 @@ const Banner = () => {
          </div>
        
       </div>
+  
       </div>
   
   );

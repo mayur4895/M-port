@@ -12,11 +12,8 @@ const MainLayout = ({children}: {children: React.ReactNode}) => {
      <div className='   flex flex-row gap-5 w-full'>
      <Sidebar/>
      
-     <div className=' flex  justify-center   flex-col      md:max-w-[calc(100%-250px)] w-full  md:ml-[250px]  ml-0  md:mt-0 mt-[50px]'>
-       
-       {children}
-       
-      
+     <div className=' flex  justify-center   flex-col      lg:max-w-[calc(100%-250px)] w-full  lg:ml-[250px]  ml-0  lg:mt-0 mt-[50px]'>
+         {children} 
      </div>
      </div>
       

@@ -4,28 +4,22 @@ export const MayurData = {
         "about": {
             "name": "Mayur Shinde",
             "title": "Web Developer",
+            "resumeUrl":"https://drive.google.com/uc?export=download&id=1JQEnhq_mVkk92d9t6TzztyYwNUFQ27ro",
             "subTitle": "I develop Interactive Website, user interfaces and web applications",
-            "description": "As a React developer with 5 years of experience, I have honed my skills in JavaScript and am currently learning TypeScript to expand my expertise. I pride myself on being a quick learner and attentive listener, which allows me to collaborate effectively with clients to create efficient and scalable solutions. My focus is on developing user-friendly applications that solve real-world problems.",
-            "quote": "Live the Life as you want",
+            "description": "I am a passionate and skilled full-stack developer with expertise in building scalable and feature-rich web applications. I have hands-on experience working with modern technologies like Next.js, React.js, Node.js, MongoDB, and Prisma, alongside tools like Tailwind CSS, Redux, and TanStack Query.I specialize in creating robust solutions with a focus on user-friendly interfaces, seamless functionality, and efficient backend processes",
             "exp_year": "5",
-            "address": "Los Angeles , America",
-            "some_total": "90",
-            "phoneNumber": "+91-9212321321",
-            "contactEmail": "portfolio3@gmail.com",
+            "address": "Pimple Gurav, pune 411061", 
+            "phoneNumber": "+91-8855964895",
+            "contactEmail": "mayurshinde4895@gmail.com",
             "avatar": {
-                "public_id": "portfolio3/1713995155677-122l5x.webp",
-                "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1713995155677-122l5x.webp"
+                "public_id": "mayur/1713995155677-122l5x.webp",
+                "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1713995155677-122l5x.webp"
             },
-            "alternateAvatars": [
-                {
-                    "public_id": "portfolio3/1713996156944-1hro1b.webp",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1713996156944-1hro1b.webp"
-                }
-            ]
+          
         },
         "_id": "65b3a22c01d900e96c4219ae",
-        "username": "portfolio3",
-        "email": "portfolio3@gmail.com",
+        "username": "mayur",
+        "email": "mayurshinde4895@gmail.com",
         "role": "admin",
         "timeline": [
             {
@@ -110,8 +104,8 @@ export const MayurData = {
                 "summary": "Contributed to the development of a cutting-edge mobile application aimed at revolutionizing the e-commerce industry.\n",
                 "sequence": 1,
                 "icon": {
-                    "public_id": "portfolio3/1710357917833-0mic4.png",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357917833-0mic4.png"
+                    "public_id": "mayur/1710357917833-0mic4.png",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357917833-0mic4.png"
                 },
                 "startDate": "2024-01-03T00:00:00.000Z",
                 "endDate": "2024-03-08T00:00:00.000Z",
@@ -128,27 +122,7 @@ export const MayurData = {
                 "enabled": true,
                 "_id": "65f1fd9e0556c3f887e9d9d8"
             },
-            {
-                "company_name": "ThePortfolyo",
-                "summary": "",
-                "sequence": 1,
-                "icon": {
-                    "public_id": "1706289470834-siro83",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706289470834-siro83"
-                },
-                "startDate": "2023-12-13T00:00:00.000Z",
-                "endDate": "2024-01-25T00:00:00.000Z",
-                "jobTitle": "Software Developer",
-                "jobLocation": "Bangalore",
-                "bulletPoints": [
-                    "Design and build full website",
-                    " Optimized Site ",
-                    " SEO implemented"
-                ],
-                "forEducation": true,
-                "enabled": true,
-                "_id": "65b3e93feb20546ae6d46369"
-            }
+             
         ],
         "skills": [ 
             {
@@ -597,8 +571,8 @@ export const MayurData = {
                 "enabled": true,
                 "_id": "65f1fd690556c3f887e9d94a",
                 "image": {
-                    "public_id": "portfolio3/1710364293287-4q1ngo.webp",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710364293287-4q1ngo.webp"
+                    "public_id": "mayur/1710364293287-4q1ngo.webp",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710364293287-4q1ngo.webp"
                 }
             },
             {
@@ -606,8 +580,8 @@ export const MayurData = {
                 "charge": "$600",
                 "desc": "I build brands through cultural insights & strategic vision. Custom crafted business solutions.",
                 "image": {
-                    "public_id": "portfolio3/1710357775748-9vwq4q.jpeg",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357775748-9vwq4q.jpeg"
+                    "public_id": "mayur/1710357775748-9vwq4q.jpeg",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357775748-9vwq4q.jpeg"
                 },
                 "enabled": true,
                 "_id": "65f1fd100556c3f887e9d87b"
@@ -629,8 +603,8 @@ export const MayurData = {
                 "charge": "$699",
                 "desc": "Custom marketing solutions. Get your business on the next level. We provide worldwide marketing.",
                 "image": {
-                    "public_id": "portfolio3/1710357668346-ke8kgt.jpeg",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357668346-ke8kgt.jpeg"
+                    "public_id": "mayur/1710357668346-ke8kgt.jpeg",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357668346-ke8kgt.jpeg"
                 },
                 "_id": "65b3e322b48589dfcae184d0",
                 "enabled": true
@@ -640,8 +614,8 @@ export const MayurData = {
                 "charge": "$499",
                 "desc": "I build brands through cultural insights & strategic vision. Custom crafted business solutions.",
                 "image": {
-                    "public_id": "portfolio3/1710357680224-phijt.png",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357680224-phijt.png"
+                    "public_id": "mayur/1710357680224-phijt.png",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357680224-phijt.png"
                 },
                 "_id": "65b3e2f6b48589dfcae1843b",
                 "enabled": true
@@ -651,8 +625,8 @@ export const MayurData = {
                 "charge": "$499",
                 "desc": "Get yourself a website.",
                 "image": {
-                    "public_id": "portfolio3/1710357752227-6f5trs.jpeg",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357752227-6f5trs.jpeg"
+                    "public_id": "mayur/1710357752227-6f5trs.jpeg",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357752227-6f5trs.jpeg"
                 },
                 "_id": "65b3e2a6b48589dfcae183f2",
                 "enabled": true
@@ -661,8 +635,8 @@ export const MayurData = {
         "testimonials": [
             {
                 "image": {
-                    "public_id": "portfolio3/1710357726628-c4dr18.png",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357726628-c4dr18.png"
+                    "public_id": "mayur/1710357726628-c4dr18.png",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357726628-c4dr18.png"
                 },
                 "name": "Samantha Wu",
                 "review": "I had the pleasure of working closely with John on a challenging project. He is a highly skilled developer who consistently delivered excellent results. His ability to understand complex requirements and implement efficient solutions was truly impressive. I would highly recommend him to any organization looking for a talented developer.",
@@ -672,8 +646,8 @@ export const MayurData = {
             },
             {
                 "image": {
-                    "public_id": "portfolio3/1710357705657-aimydg.png",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357705657-aimydg.png"
+                    "public_id": "mayur/1710357705657-aimydg.png",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357705657-aimydg.png"
                 },
                 "name": "David Rodriguez",
                 "review": "Throughout our project, John demonstrated exceptional technical skills and a strong work ethic. He consistently met deadlines and produced high-quality code that exceeded our expectations. His proactive approach to problem-solving and effective communication made him a valuable member of our team\n",
@@ -683,8 +657,8 @@ export const MayurData = {
             },
             {
                 "image": {
-                    "public_id": "portfolio3/1710357683739-tqeav.png",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357683739-tqeav.png"
+                    "public_id": "mayur/1710357683739-tqeav.png",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357683739-tqeav.png"
                 },
                 "name": " Emily Chen",
                 "review": "I had the pleasure of collaborating with John on a complex web application project. His ability to translate design concepts into functional, user-friendly features was impressive. John consistently delivered high-quality work and was always open to feedback. I look forward to working with him again in the future.\n\n",
@@ -694,8 +668,8 @@ export const MayurData = {
             },
             {
                 "image": {
-                    "public_id": "portfolio3/1710357647030-pi5cis.png",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357647030-pi5cis.png"
+                    "public_id": "mayur/1710357647030-pi5cis.png",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357647030-pi5cis.png"
                 },
                 "name": " Michael Lee",
                 "review": "John is a skilled developer with a keen eye for detail. He played a crucial role in our team, consistently producing clean, efficient code. His collaborative nature and willingness to take on new challenges make him an invaluable asset to any project.\"",
@@ -705,8 +679,8 @@ export const MayurData = {
             },
             {
                 "image": {
-                    "public_id": "portfolio3/1710357534893-2s9b5d.png",
-                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357534893-2s9b5d.png"
+                    "public_id": "mayur/1710357534893-2s9b5d.png",
+                    "url": "https://portfolio-image-store.s3.ap-south-1.amazonaws.com/mayur/1710357534893-2s9b5d.png"
                 },
                 "name": "Sarah Johnson",
                 "review": "Working with John was an absolute delight. Their professionalism and technical prowess were evident from day one. He consistently delivered top-notch code and went above and beyond to ensure the success of our project. I highly recommend him for any development endeavor",

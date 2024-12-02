@@ -69,11 +69,10 @@ const Sidebar = () => {
   
   return (
     <>
-    <div className='hidden md:w-[250px] md:block h-full fixed inset-0 '>
+    <div className='hidden lg:w-[250px] lg:block h-full fixed inset-0 '>
       <div className='w-ful shadow-md border border-b-0 h-20 px-5  items-center flex'>
         <div className='flex gap-2 items-center'>
-        <Image src={"https://portfolio-image-store.s3.ap-south-1.amazonaws.com/portfolio3/1710357726628-c4dr18.png"}  alt="logo" height={40} width={40} className=' object-fill'/>
-        Portfolio.
+        <h2 className=' text-2xl flex items-center justify-center gap-0 text-cyan-400 font-semibold'><Image src="/m.png" alt="logo" height={40} width={40}/> ayur.  </h2>
         </div>
       </div>
      
@@ -103,10 +102,10 @@ const Sidebar = () => {
 
 
     </div>
-    <div className='md:hidden  fixed h-12 w-full  bg-white border-b dark:bg-black top-0 left-0  z-40'>
+    <div className='lg:hidden  fixed h-12 w-full  bg-white border-b dark:bg-black top-0 left-0  z-40'>
       
     <Sheet >
-  <SheetTrigger className='md:hidden fixed  top-2 left-2  z-100'><TbMenu size={25}/></SheetTrigger>
+  <SheetTrigger className='lg:hidden fixed  top-2 left-2  z-100'><TbMenu size={25}/></SheetTrigger>
   <SheetContent side={"left"}>
     <SheetHeader>
       <SheetTitle className='flex items-center gap-2'>
